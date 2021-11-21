@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Flashcards</title>
+  </head>
+  <body>
+    <div class="title">
+      <h2 style="text-align: center">FLASHCARDS</h2>
+    </div>
+    <div class="instruction">
+      <h4 style="text-align: center">
+        Double click
+        <img
+          src="loupe.png"
+          style="
+            height: 12x;
+            width: 12px;
+            filter: invert(100%) sepia(100%) saturate(10000%) brightness(50%)
+              contrast(100%) blur(0.25px);
+          "
+        />
+        to reveal the answer and
+        <img
+          src="x.svg"
+          style="
+            height: 12px;
+            width: 12px;
+            filter: invert(25%) sepia(100%) saturate(2000%) brightness(100%)
+              contrast(75%) blur(0.25px);
+          "
+        />
+        to delete the card.
+      </h4>
+    </div>
+    <div class="container">
+      <div class="nav">
+        <table>
+          <tr>
+            <a id="question-text">Question:</a>
+          </tr>
+          <tr>
+            <textarea
+              id="question-input"
+              maxlength="250"
+              placeholder="Write the question here..."
+            ></textarea>
+          </tr>
+          <tr>
+            <td>
+              <a id="answer-text">Answer:</a>
+            </td>
+            <td>
+              <textarea
+                id="answer-input"
+                maxlength="250"
+                placeholder="Write the answer here..."
+              ></textarea>
+            </td>
+          </tr>
+        </table>
+        <section class="buttons">
+          <button class="btn-create" style="font-size: 10px">
+            Create Card
+          </button>
+          <button class="btn-save" style="font-size: 10px">Save Card</button>
+          <button class="btn-clear" style="font-size: 10px">Clear Cards</button>
+        </section>
+      </div>
+    </div>
+    <div class="card-container"></div>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="script.js"></script>
+</html>
