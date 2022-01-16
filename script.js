@@ -99,14 +99,14 @@ const saveCards = function () {
   let aCards = document.querySelectorAll(".answer-output");
   saveContainer = {};
   let save = confirm(
-    "Are you sure you want to save this? This would overwrite the previous setting."
+    "Are you sure you want to save this? This would overwrite the previous state."
   );
   if (save) {
     for (let [i, card] of qCards.entries()) {
       card = card.innerText;
       saveContainer[card] = aCards[i].innerHTML;
     }
-    alert("The cards are now saved in the local storage.");
+    alert("The current state is now saved in the local storage.");
     localStorage.setItem("cards", JSON.stringify(saveContainer));
   }
 };
@@ -159,5 +159,9 @@ saveBtn.addEventListener("click", () => {
 
 clearBtn.addEventListener("click", () => {
   // Clear Button event.
+  if(!Boolean(document.querySelectorAll('.new-card').length)){
+    alert("There are no cards present in the program");
+  } else {
   clearCards();
+  };
 });
