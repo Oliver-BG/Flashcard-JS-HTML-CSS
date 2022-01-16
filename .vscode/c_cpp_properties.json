@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "C:/cygnus/cygwin-b20/include",
+                "C:/cygnus/cygwin-b20/include/g++"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-arm64",
+            "compilerPath": "C:/cygnus/cygwin-b20/H-i586-cygwin32/bin/g++.exe"
+        }
+    ],
+    "version": 4
+}
