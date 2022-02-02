@@ -27,7 +27,6 @@ button {
 }
 
 button:hover {
-  transform: scale(1.15, 1.15);
   background-color: rgba(175, 255, 100, 0.9);
 }
 
