@@ -173,6 +173,13 @@ body {
     blur(0.25px);
 }
 
+.number {
+  font-size: 10px;
+  color:rgb(255, 251, 0);
+  position: relative;
+  left: -20px;
+}
+
 .r-icon {
   height: 15px;
   width: 15px;

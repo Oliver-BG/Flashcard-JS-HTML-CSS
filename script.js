@@ -15,7 +15,7 @@ let saveContainer = {};
 
 /* FUNCTION DECLARATIONS */
 
-const createCard = function (questionInput, answerInput) {
+const createCard = function (questionInput, answerInput, i) {
   // Creates a new card.
   const newCard = document.createElement("div");
   const questionText = document.createElement("p");
@@ -23,6 +23,11 @@ const createCard = function (questionInput, answerInput) {
   const answerText = document.createElement("a");
   const answerLabel = document.createElement("a");
   const rIcon = document.createElement("img");
+  const index = document.createElement("a");
+  
+  // Card numbering
+  index.innerHTML = `${i}`;
+  index.classList.add("number");
 
   // X-icon for deleting cards.
   xIcon.setAttribute("src", "x.svg");
@@ -37,6 +42,7 @@ const createCard = function (questionInput, answerInput) {
   newCard.classList.add("new-card");
   newCard.appendChild(xIcon);
   newCard.appendChild(rIcon);
+  newCard.appendChild(index);
 
   // Function calls to add more elements to the new card as well as new click events.
   addQuestion(questionInput, questionText, newCard);
@@ -114,8 +120,10 @@ const saveCards = function () {
 const loadCards = function () {
   // Loads the question and answers object saved in the local storage and create a card based on it.
   let savedCards = JSON.parse(localStorage.getItem("cards")) || {};
+  let i = 1;
   for (let [k, v] of Object.entries(savedCards)) {
-    createCard(k, v);
+    createCard(k, v, i);
+    i++;
   }
 };
 
