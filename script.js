@@ -84,7 +84,8 @@ const appendAnswer = function (newCard) {
 
 const addText = function (questionInput, answerInput) {
   // Clears the textareas when the new card is created.
-  createCard(questionInput, answerInput);
+  let index = document.querySelectorAll('.new-card').length + 1;
+  createCard(questionInput, answerInput, index);
   questionInput.value = "";
   answerInput.value = "";
 };
