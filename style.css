@@ -125,7 +125,7 @@ body {
 }
 
 /* CARD ELEMENTS */
-.container {
+.interface {
   display: block;
   padding-top: 20px;
   padding-right: 20px;
@@ -137,6 +137,7 @@ body {
   border-radius: 8px;
   left: 30%;
   width: 290px;
+  margin-bottom: 50px;
 }
 
 .new-card {
@@ -153,7 +154,7 @@ body {
 }
 
 .card-container {
-  position: absolute;
+  position: relative;
   top: 53%;
   display: flex;
   flex-direction: spaced-evenly;
