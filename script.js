@@ -90,16 +90,6 @@ const addText = function (questionInput, answerInput) {
   answerInput.value = "";
 };
 
-const deleteCard = function (xIcon, newCard) {
-  // Deletes a card when the x-icon is clicked.
-  xIcon.addEventListener("click", () => {
-    let confirmDelete = confirm("Are you sure you want to delete this card?");
-    if (confirmDelete) {
-      newCard.remove();
-    }
-  });
-};
-
 const saveCards = function () {
   // Adds the card's question and answer into a save container object.
   let qCards = document.querySelectorAll(".question-output");
@@ -126,6 +116,27 @@ const loadCards = function () {
     createCard(k, v, i);
     i++;
   }
+};
+
+const refreshNum = function(){
+  let num = document.querySelectorAll(".number")
+  let j = 1;
+
+  for(let i = 0; num.length > i; i++){
+    num[i].innerHTML = `${j}`;
+    j++;
+  }
+}
+
+const deleteCard = function (xIcon, newCard) {
+  // Deletes a card when the x-icon is clicked.
+  xIcon.addEventListener("click", () => {
+    let confirmDelete = confirm("Are you sure you want to delete this card?");
+    if (confirmDelete) {
+      newCard.remove();
+      refreshNum();
+    }
+  });
 };
 
 const clearCards = function () {
