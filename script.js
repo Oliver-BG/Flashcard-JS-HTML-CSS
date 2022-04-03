@@ -24,7 +24,7 @@ const createCard = function (questionInput, answerInput, i) {
   const answerLabel = document.createElement("a");
   const rIcon = document.createElement("img");
   const index = document.createElement("a");
-  
+
   // Card numbering
   index.innerHTML = `${i}`;
   index.classList.add("number");
@@ -84,7 +84,7 @@ const appendAnswer = function (newCard) {
 
 const addText = function (questionInput, answerInput) {
   // Clears the textareas when the new card is created.
-  let index = document.querySelectorAll('.new-card').length + 1;
+  let index = document.querySelectorAll(".new-card").length + 1;
   createCard(questionInput, answerInput, index);
   questionInput.value = "";
   answerInput.value = "";
@@ -118,15 +118,13 @@ const loadCards = function () {
   }
 };
 
-const refreshNum = function(){
-  let num = document.querySelectorAll(".number")
-  let j = 1;
+const refreshNum = function () {
+  let num = document.querySelectorAll(".number");
 
-  for(let i = 0; num.length > i; i++){
-    num[i].innerHTML = `${j}`;
-    j++;
+  for (let [i, n] of num.entries()) {
+    n.innerHTML = `${i + 1}`;
   }
-}
+};
 
 const deleteCard = function (xIcon, newCard) {
   // Deletes a card when the x-icon is clicked.
@@ -172,16 +170,14 @@ createBtn.addEventListener("click", () => {
   }
 });
 
-saveBtn.addEventListener("click", () => {
-  // Save Button event.
-  saveCards();
-});
+// Save Button event.
+saveBtn.addEventListener("click", saveCards);
 
 clearBtn.addEventListener("click", () => {
   // Clear Button event.
-  if(!Boolean(document.querySelectorAll('.new-card').length)){
+  if (!document.querySelectorAll(".new-card").length) {
     alert("There are no cards present in the program");
   } else {
-  clearCards();
-  };
+    clearCards();
+  }
 });
